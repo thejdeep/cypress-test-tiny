@@ -37,3 +37,9 @@
 //       log.snapshot().end()
 //     })
 // })
+import { Username } from './globals';
+Cypress.Commands.add('testAsync', function() {
+    // Setting the global variable here
+    Username.username = 'John Doe';
+    return cy.log(`Inside command : ${Username.username}`);
+});
